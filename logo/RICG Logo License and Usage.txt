@@ -1,5 +1,6 @@
 Responsive Images Community Group (RICG) Logo License Agreement
-This work is licensed under a<a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/deed.en_US">Creative Commons Attribution-NoDerivs 3.0 Unported License</a>.
+This work is licensed under a Creative Commons Attribution-NoDerivs 3.0 Unported License, but with some restrictions listed below. Legal code:
+http://creativecommons.org/licenses/by-nd/3.0/deed.en_US
 
 1. You may not alter the appearance of the RICG logo. You may not use the RICG logo as a feature or design element of any other logo.
 
