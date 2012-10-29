@@ -69,6 +69,10 @@ td.no{
         "They told us to make CG group!"></p>
       </section>
 
+<section>
+	<h2>So we made...</h2>
+    <p><img src="images/site_v3.png" alt="The RICG website"></p>
+</section>
       <section>
         <h1>Use cases</h1>
 
@@ -170,9 +174,11 @@ td.no{
       </section>
 
       <section>
-        <h1>9 Requirements</h1>
-
         <section>
+        <h1>9 Requirements</h1>
+		</section>
+        <section>
+        <h2>1</h2> 
           <blockquote>
             Match image sources with media queries - update the
             source of an image dynamically.
@@ -180,18 +186,21 @@ td.no{
         </section>
 
         <section>
+        <h2>2</h2>
           <blockquote>
             Degrade gracefully.
           </blockquote>
         </section>
 
         <section>
+        <h2>3</h2>
           <blockquote>
-            Be accessible (text fallback, ARIA-compatible).
+            Be accessible <br> (text fallback, ARIA-compatible).
           </blockquote>
         </section>
 
         <section>
+        <h2>4</h2>
           <blockquote>
             No server-side processing. But can still work with
             content negotiation.
@@ -199,6 +208,7 @@ td.no{
         </section>
 
         <section>
+        <h2>5</h2>
           <blockquote>
             Simple API.
           </blockquote>
@@ -216,31 +226,34 @@ td.no{
         </section>
 
         <section>
+        <h2>6</h2>
           <blockquote>
-            Support art direction (i.e., not just resolution
-            switching).
+            Support art direction<br> (not just resolution switching).
           </blockquote>
         </section>
 
         <section>
+        <h2>7</h2>
           <blockquote>
             Breakpoint friendly.
           </blockquote>
         </section>
 
         <section>
+        <h2>8</h2>
           <blockquote>
             Support emerging formats.
           </blockquote>
         </section>
 
         <section>
+        <h2>9</h2>
           <blockquote>
             Polyfillable.
           </blockquote>
         </section>
-      </section>
-
+    
+	  </section>
       <section>
         <h2>The &lt;picture&gt; Element</h2>
         <pre>
@@ -263,11 +276,14 @@ td.no{
       </section>
 
       <section>
-        <h1>Demo</h1>
+        <h1>Live Demo</h1>
+        <p><a href="https://github.com/yoavweiss/RespImg-WebCore/downloads"><img src="images/ricg_chromium.png" alt="Chromium build"></a>
+        <p><a href="https://github.com/yoavweiss/RespImg-WebCore/downloads">Grab our Chromium build!</a></p>
       </section>
 	
       <section>
       <h2>What about the <code>srcset</code> attribute?</h2>
+      <img src="images/dr_strangepicture.png">
 	  </section>
       <section>
         <table>
@@ -359,17 +375,39 @@ td.no{
           </tr>
         </table>
       </section>
-
+	  <section>
+      	<h2>Lets merge them!</h2>
+        <section>
+        <img src="images/double_rainbow.jpg">
+        </section>
+        
+        <section>
+          <pre><code contenteditable class="xml">&lt;picture width="500" height="500"&gt;
+   
+   &lt;source media="(min-width: 45em)" 
+       srcset="large-1.jpg 1x, large-2.jpg 2x"&gt;
+   
+   &lt;source media="(min-width: 18em)" 
+       srcset="med-1.jpg 1x, med-2.jpg 2x"&gt;
+   
+   &lt;source srcset="small-1.jpg 1x, small-2.jpg 2x"&gt;
+      	
+   &lt;img src="small-1.jpg" alt=""&gt; 
+      
+   &lt;p&gt;Accessible text&lt;/p&gt;
+   
+&lt;/picture&gt;</code></pre>
+        </section>
+      </section>
       <section>
         <h2>Photo Attributions</h2>
-
         <ul>
           <li>
             <a href="http://w3cmemes.tumblr.com/">W3C memes</a>
           </li>
 
           <li>Double rainbow, by <a href=
-          "http://www.flickr.com/photos/megpig/">meganjo</a>:
+          "http://www.flickr.com/photos/megpig/">meganjo</a>
           </li>
         </ul>
       </section>
