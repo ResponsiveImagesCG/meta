@@ -19,10 +19,36 @@
   <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 
   <script>
-        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
   </script><!--[if lt IE 9]>
                 <script src="lib/js/html5shiv.js"></script>
                 <![endif]-->
+<style>
+table { 
+	width: 100%; 
+	border-collapse: collapse;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #222; 
+}
+th { 
+	background: #333; 
+	color: white; 
+	font-weight: bold; 
+}
+td, th { 
+	padding: 1em; 
+	border: 1px solid #ccc; 
+}
+td.yes{
+	color: green;
+	text-align:center;
+}
+td.no{
+	color: red;
+}
+</style>
 </head>
 
 <body>
@@ -38,7 +64,9 @@
 
       <section>
         <h2>Rocky start</h2>
-        <p><img src="images/community-group.jpg" alt="They told us to make CG group!"></p>
+
+        <p><img src="images/community-group.jpg" alt=
+        "They told us to make CG group!"></p>
       </section>
 
       <section>
@@ -125,7 +153,7 @@
 
           <li class="fragment"><code>getUserMedia()</code></li>
 
-          <li class="fragment"><code>Media Capture</code></li>
+          <li class="fragment">Media Capture</li>
         </ol>
       </section>
 
@@ -142,7 +170,7 @@
       </section>
 
       <section>
-        <h1>Requirements</h1>
+        <h1>9 Requirements</h1>
 
         <section>
           <blockquote>
@@ -196,7 +224,7 @@
 
         <section>
           <blockquote>
-            breakpoint friendly.
+            Breakpoint friendly.
           </blockquote>
         </section>
 
@@ -236,6 +264,100 @@
 
       <section>
         <h1>Demo</h1>
+      </section>
+	
+      <section>
+      <h2>What about the <code>srcset</code> attribute?</h2>
+	  </section>
+      <section>
+        <table>
+        <caption>
+          <tr>
+            <th>Requirement</th>
+
+            <th>Picture</th>
+
+            <th>srcset</th>
+          </tr>
+
+          <tr>
+            <td>Match MQ &amp; Update dynamically</td>
+
+            <td class="yes">✓</td>
+
+            <td class="no">✗</td>
+          </tr>
+
+          <tr>
+     
+
+            <td>Degrade gracefully</td>
+
+            <td class="yes">✓</td>
+
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Accessible.</td>
+
+            <td class="yes">✓</td>
+
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+      
+
+            <td>No server-side processing</td>
+
+            <td class="yes">✓</td>
+
+            <td class="no">✗</td>
+          </tr>
+
+          <tr>
+  
+
+            <td>Simple API</td>
+
+            <td class="yes">✓</td>
+
+            <td class="no">✗</td>
+          </tr>
+
+          <tr>
+            <td>Support art direction</td>
+
+            <td class="yes">✓</td>
+
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Breakpoint friendly</td>
+
+            <td class="yes">✓</td>
+
+            <td class="no">✗</td>
+          </tr>
+
+          <tr>
+            <td>Greacefully support new formats</td>
+
+            <td class="yes">✓</td>
+
+            <td class="no">✗</td>
+          </tr>
+
+          <tr>
+            <td>Polyfillable</td>
+
+            <td class="yes">✓</td>
+
+            <td class="yes">✓</td>
+          </tr>
+        </table>
       </section>
 
       <section>
