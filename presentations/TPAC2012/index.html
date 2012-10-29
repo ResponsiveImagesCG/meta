@@ -19,7 +19,7 @@
   <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 
   <script>
-                    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
   </script><!--[if lt IE 9]>
                 <script src="lib/js/html5shiv.js"></script>
                 <![endif]-->
@@ -31,13 +31,14 @@
 
     <article class="slides">
       <section>
-        <p><img src="images/RICG_Logo_Reverse.png"></p>
+        <h1><img style="background-color: white" src=
+        "images/RICG_Logo_Red.png" alt=
+        "Responsive Images Community Group"></h1>
       </section>
 
       <section>
         <h2>Rocky start</h2>
-
-        <p><img src="images/community-group.jpg"></p>
+        <p><img src="images/community-group.jpg" alt="They told us to make CG group!"></p>
       </section>
 
       <section>
@@ -48,164 +49,193 @@
 
       <section>
         <h2>Art Direction</h2>
+
         <p><img src="images/art_direction.png"></p>
       </section>
 
       <section>
         <h2>Design breakpoints</h2>
-        <pre><code contenteditable>
-@media all and (max-width: 16em) { &hellip; }
-@media all and (max-width: 32em) { &hellip; }
-@media all and (max-width: 41em) { &hellip; }
-        </code></pre>
+        <pre>
+<code contenteditable="">
+@media all and (max-width: 16em) { … }
+@media all and (max-width: 32em) { … }
+@media all and (max-width: 41em) { … }
+        </code>
+</pre>
       </section>
 
       <section>
-      	<section>
-        <h2>Matching media features and media types</h2>
-        </section>
-        
         <section>
-    	    <h3>Print</h3>
-            <p><img src="images/printed_image.jpg"></p>
+          <h2>Matching media features and media types</h2>
         </section>
-        
+
         <section>
-	        <h3>Monochrome</h3>
-            <p><img src="images/color_and_bw_graph.png"></p>
+          <h3>Print</h3>
+
+          <p><img src="images/printed_image.jpg"></p>
         </section>
-        
+
         <section>
-	        <h3>Orientation</h3>
-            <video controls  poster="videos/screenrmx1.jpg" width="652" height="389"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
-    <source src="videos/screenrmx1.m4v" type="video/mp4">
-    <source src="videos/screenrmx1.webm" type="video/webm">
-    <source src="videos/screenrmx1.ogv" type="video/ogg">
-    <source src="videos/screenrmx1.mp4">
-    <object type="application/x-shockwave-flash" data="videos/flashfox.swf" width="652" height="389" style="position:relative;">
-      <param name="movie" value="videos/flashfox.swf">
-      <param name="allowFullScreen" value="true">
-      <param name="flashVars" value="autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v">
-      <embed src="videos/flashfox.swf" width="652" height="389" style="position:relative;"  flashVars="autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v"	allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en"> 
-      <img alt="Responsive images on Meego website" src="videos/screenrmx1.jpg" style="position:absolute;left:0;" width="652" height="389" title="Video playback is not supported by your browser">
-    </object>
-  </video>
+          <h3>Monochrome</h3>
+
+          <p><img src="images/color_and_bw_graph.png"></p>
         </section>
-        
+
+        <section>
+          <h3>Orientation</h3><video controls poster=
+          "videos/screenrmx1.jpg" width="652" height="389" onclick=
+          "if(/Android/.test(navigator.userAgent))this.play();">
+          <source src="videos/screenrmx1.m4v" type="video/mp4">
+          <source src="videos/screenrmx1.webm" type="video/webm">
+          <source src="videos/screenrmx1.ogv" type="video/ogg">
+          <source src="videos/screenrmx1.mp4"><object type=
+          "application/x-shockwave-flash" data=
+          "videos/flashfox.swf" width="652" height="389" style=
+          "position:relative;">
+            <param name="movie" value="videos/flashfox.swf">
+            <param name="allowFullScreen" value="true">
+            <param name="flashVars" value=
+            "autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v">
+            <embed src="videos/flashfox.swf" width="652" height=
+            "389" style="position:relative;" flashvars=
+            "autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v"
+            allowfullscreen="true" wmode="transparent" type=
+            "application/x-shockwave-flash" pluginspage=
+            "http://www.adobe.com/go/getflashplayer_en"> <img alt=
+            "Responsive images on Meego website" src=
+            "videos/screenrmx1.jpg" style=
+            "position:absolute;left:0;" width="652" height="389"
+            title=
+            "Video playback is not supported by your browser">
+          </object></video>
+        </section>
       </section>
 
       <section>
         <h2>Relative units</h2>
-      	<p><img src="images/em_mq_labelled.png"></p>
+
+        <p><img src="images/em_mq_labelled.png"></p>
       </section>
 
       <section>
         <h2>API to manipulate sources</h2>
+
+        <ol>
+          <li class="fragment">Canvas</li>
+
+          <li class="fragment"><code>getUserMedia()</code></li>
+
+          <li class="fragment"><code>Media Capture</code></li>
+        </ol>
       </section>
 
       <section>
         <h2>Image formats</h2>
-        
-      </section>
 
+        <ol>
+          <li class="fragment">WebP</li>
+
+          <li class="fragment">JPEG-XR</li>
+
+          <li class="fragment">Future Format</li>
+        </ol>
+      </section>
 
       <section>
         <h1>Requirements</h1>
-        
+
+        <section>
+          <blockquote>
+            Match image sources with media queries - update the
+            source of an image dynamically.
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote>
+            Degrade gracefully.
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote>
+            Be accessible (text fallback, ARIA-compatible).
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote>
+            No server-side processing. But can still work with
+            content negotiation.
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote>
+            Simple API.
+          </blockquote>
+
+          <ul>
+            <li class="fragment">What's the current source?</li>
+
+            <li class="fragment">What media matched?</li>
+
+            <li class="fragment">Add, remove, and update image
+            sources.</li>
+
+            <li class="fragment">Events.</li>
+          </ul>
+        </section>
+
+        <section>
+          <blockquote>
+            Support art direction (i.e., not just resolution
+            switching).
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote>
+            breakpoint friendly.
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote>
+            Support emerging formats.
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote>
+            Polyfillable.
+          </blockquote>
+        </section>
       </section>
 
       <section>
-        <blockquote>
-          <p>The solution MUST afford developers the ability to
-          match image sources with particular media features and/or
-          media types - and have the user agent update the source
-          of an image as the media features and media types of the
-          browser environment change dynamically.</p>
-        </blockquote>
+        <h2>The &lt;picture&gt; Element</h2>
+        <pre>
+<code contenteditable="" class=
+"xml">&lt;picture width="500" height="500"&gt;
+     &lt;source media="(min-width: 45em)" 
+                src="large.jpg"&gt;
+   
+     &lt;source media="(min-width: 18em)" 
+                src="med.jpg"&gt;
+   
+     &lt;source src="small.jpg"&gt;
+   
+     &lt;img src="small.jpg" alt=""&gt;
+   
+     &lt;p&gt;Accessible text&lt;/p&gt; 
+&lt;/picture&gt;  
+     </code>
+</pre>
       </section>
 
       <section>
-        <blockquote>
-          <p>The solution MUST degrade gracefully on legacy user
-          agents by, for example, relying on HTML's built-in
-          fallback mechanisms and legacy elements.</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>The solution MUST afford developers with the ability
-          to include content that is accessible to assistive
-          technologies.</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>The solution MUST NOT require server-side processing
-          to work. However, if required, server-side adaptation can
-          still occur through content negotiation or similar
-          techniques (i.e., they are not mutually exclusive).</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>The solution MUST provide developers with a means to
-          programmatically interface with image resources, as well
-          as access relevant attributes and methods that make the
-          solution practical to work with (i.e., it shouldn't
-          require complicated Regex or nested loops to manipulate
-          values). In addition, the solution MUST provide means to
-          hook into relevant events (e.g., loading, errors, etc.).
-          In any case, an API SHOULD provide a means to: Determine
-          the current source of the image. Determine what
-          environmental condition caused the current source to be
-          selected (reflected as, for example, a CSS Media Query).
-          Add, remove, and update image sources.</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>The solution MUST afford developers the ability to
-          explicitly define different image versions as opposed to
-          only different resolutions of the same image.</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>The solution MUST afford developers the ability to
-          define the breakpoints for images as either minimum
-          values (mobile first) or maximum values (desktop first)
-          to match the media queries used in their design.</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>The solution MUST function in such a way that is
-          responsive to environmental changes in relative units
-          (e.g., when the user increases the base font size of the
-          browser by pressing ctrl+ or ctrl-).</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>The solution MAY allow developers to specify images in
-          different formats (or specify the format of a set of
-          image sources).</p>
-        </blockquote>
-      </section>
-
-      <section>
-        <blockquote>
-          <p>To provide compatibility with legacy user agents, it
-          SHOULD be possible for developers to polyfill the
-          solution.</p>
-        </blockquote>
+        <h1>Demo</h1>
       </section>
 
       <section>
