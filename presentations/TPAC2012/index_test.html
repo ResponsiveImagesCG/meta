@@ -48,10 +48,6 @@ td.yes{
 td.no{
 	color: red;
 }
-
-tr.unimportant{
-	opacity: .5;
-}
 </style>
 </head>
 
@@ -111,52 +107,28 @@ tr.unimportant{
       </section>
 
       <section>
-<section>        <h2>Design breakpoints</h2>
+        <h2>Design breakpoints</h2>
         <pre>
-<code contenteditable="">@media all and (max-width: 16em) { … }
-@media all and (max-width: 32em) { … }</code></pre>
-	<video controls  autoplay="autoplay" poster="index_test.files/html5video/screenrmx4.jpg" width="934" height="350"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
-<source src="index_test.files/html5video/screenrmx4.m4v" type="video/mp4" />
-<source src="index_test.files/html5video/screenrmx4.webm" type="video/webm" />
-<object type="application/x-shockwave-flash" data="index_test.files/html5video/flashfox.swf" width="934" height="350" style="position:relative;">
-<param name="movie" value="index_test.files/html5video/flashfox.swf" />
-<param name="allowFullScreen" value="true" />
-<param name="flashVars" value="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=index_test.files/html5video/screenrmx4.jpg&amp;src=screenrmx4.m4v" />
- <embed src="index_test.files/html5video/flashfox.swf" width="934" height="350" style="position:relative;"  flashVars="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=index_test.files/html5video/screenrmx4.jpg&amp;src=screenrmx4.m4v"	allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
-<img alt="breakpoints" src="index_test.files/html5video/screenrmx4.jpg" style="position:absolute;left:0;" width="934" height="350" title="Video playback is not supported by your browser" />
-</object>
-</video>
-</section>
-<section>
-	 <h2>Design breakpoints</h2>
-	<ul>
-    	<li class="fragment">Right image for right dimensions.</li>
-        <li class="fragment">Avoid resizing image (loss of detail/quality)</li>
-        <li class="fragment">Potentially save bandwidth.</li>
-    </ul>
-</section>
+<code contenteditable="">
+@media all and (max-width: 16em) { … }
+@media all and (max-width: 32em) { … }
+@media all and (max-width: 41em) { … }
+        </code>
+</pre>
       </section>
 
       <section>
           <h2>Media types and features</h2>
         <section>
           <h3>Print</h3>
+
           <p><img src="images/printed_image.jpg"></p>
-          <ul>
-             <li>Half-tone/low-quality image</li>
-             <li>Crisp text</li>
-          </ul>
         </section>
 
         <section>
           <h3>Monochrome</h3>
-		  	
-          <p><img src="images/color_and_bw_graph.png"></p>
-        
-          <ul>
-		    <li>Communication with color is meanigless</li>	
-          </ul>
 
+          <p><img src="images/color_and_bw_graph.png"></p>
         </section>
 
         <section>
@@ -198,19 +170,15 @@ tr.unimportant{
 
       <section>
         <h2>API to manipulate sources</h2>
-		 <section><p>
-         <img src="images/dynamic_capture.png" width="498" height="509"> 
-         <img src="images/dynamic_capture.png">
-         <img src="images/dynamic_capture.png">
-         </p></section>
-        <section><ol>
+
+        <ol>
           <li class="fragment">Canvas</li>
 
           <li class="fragment"><code>getUserMedia()</code></li>
 
           <li class="fragment">Media Capture</li>
         </ol>
-</section>      </section>
+      </section>
 
       <section>
         <h2>Image formats</h2>
@@ -337,8 +305,8 @@ tr.unimportant{
       <img src="images/dr_strangepicture.png">
 	  </section>
       <section>
-      <h2>Round 1 - FIGHT!</h2>
         <table>
+        <caption>
           <tr>
             <th>Requirement</th>
 
@@ -347,8 +315,15 @@ tr.unimportant{
             <th><code>srcset</code></th>
           </tr>
 
+          <tr>
+            <td>Match MQ &amp; Update dynamically</td>
 
-          <tr  class="unimportant">
+            <td class="yes">✓</td>
+
+            <td class="no">✗</td>
+          </tr>
+
+          <tr>
      
 
             <td>Degrade gracefully</td>
@@ -358,7 +333,7 @@ tr.unimportant{
             <td class="yes">✓</td>
           </tr>
 
-          <tr  class="unimportant">
+          <tr>
             <td>Accessible</td>
 
             <td class="yes">✓</td>
@@ -366,31 +341,6 @@ tr.unimportant{
             <td class="yes">✓</td>
           </tr>
 
-          
- 		
-          <tr  class="unimportant">
-            <td>Support art direction</td>
-
-            <td class="yes">✓</td>
-
-            <td class="yes">✓</td>
-          </tr>
-           <tr class="unimportant">
-            <td>Polyfillable</td>
-
-            <td class="yes">✓</td>
-
-            <td class="yes">✓</td>
-          </tr>
-      
-          <tr>
-            <td>Match MQ &amp; update dynamically</td>
-
-            <td class="yes">✓</td>
-
-            <td class="no">✗</td>
-          </tr>
-          
           <tr>
       
 
@@ -400,7 +350,9 @@ tr.unimportant{
 
             <td class="no">✗</td>
           </tr>
+
           <tr>
+  
 
             <td>Simple API</td>
 
@@ -409,7 +361,13 @@ tr.unimportant{
             <td class="no">✗</td>
           </tr>
 
-       
+          <tr>
+            <td>Support art direction</td>
+
+            <td class="yes">✓</td>
+
+            <td class="yes">✓</td>
+          </tr>
 
           <tr>
             <td>Breakpoint friendly</td>
@@ -427,11 +385,17 @@ tr.unimportant{
             <td class="no">✗</td>
           </tr>
 
-      
+          <tr>
+            <td>Polyfillable</td>
+
+            <td class="yes">✓</td>
+
+            <td class="yes">✓</td>
+          </tr>
         </table>
       </section>
 	  <section>
-      	<h2><span style="color: red" class="love">♥</span>Let's merge them!<span style="color: red" class="love">♥</span></h2>
+      	<h2> <span style="color: red">♥</span> Let's merge them! <span style="color: red">♥</span></h2>
         <section>
         <img src="images/double_rainbow.jpg">
         </section>
@@ -455,20 +419,31 @@ tr.unimportant{
         </section>
       </section>
       <section>
-        <h1>Thanks! Questions?</h1>
-        
-        <small>
-        <p>Photos from:</p>
+        <h2>Photo Attributions</h2>
         <ul>
           <li>
-            <a href="http://w3cmemes.tumblr.com/">W3C memes</a>
+            <<!-- Start EasyHtml5Video.com BODY section -->
+<div id="easyhtml5video" style="position:relative;width:934px;height:350px;"><video controls="controls"  autoplay="autoplay" poster="index_test.files/html5video/screenrmx4.jpg" width="934" height="350"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
+<source src="index_test.files/html5video/screenrmx4.m4v" type="video/mp4" />
+<source src="index_test.files/html5video/screenrmx4.webm" type="video/webm" />
+<object type="application/x-shockwave-flash" data="index_test.files/html5video/flashfox.swf" width="934" height="350" style="position:relative;">
+<param name="movie" value="index_test.files/html5video/flashfox.swf" />
+<param name="allowFullScreen" value="true" />
+<param name="flashVars" value="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=index_test.files/html5video/screenrmx4.jpg&amp;src=screenrmx4.m4v" />
+ <embed src="index_test.files/html5video/flashfox.swf" width="934" height="350" style="position:relative;"  flashVars="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=index_test.files/html5video/screenrmx4.jpg&amp;src=screenrmx4.m4v"	allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+<img alt="breakpoints" src="index_test.files/html5video/screenrmx4.jpg" style="position:absolute;left:0;" width="934" height="350" title="Video playback is not supported by your browser" />
+</object>
+</video>
+<a style="display:none" href="http://easyhtml5video.com">html5 streaming video example maker by EasyHtml5Video.com v1.7m</a></div>
+<script src="index_test.files/html5video/html5ext.js" type="text/javascript"></script>
+<!-- End EasyHtml5Video.com BODY section -->
+a href="http://w3cmemes.tumblr.com/">W3C memes</a>
           </li>
 
           <li>Double rainbow, by <a href=
           "http://www.flickr.com/photos/megpig/">meganjo</a>
           </li>
         </ul>
-        </small>
       </section>
     </article>
   </div><script src="lib/js/head.min.js">
