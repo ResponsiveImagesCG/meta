@@ -108,6 +108,9 @@ tr.unimportant{
         <h2>Art Direction</h2>
 
         <p><img src="images/art_direction.png"></p>
+  		<ul>
+        	<li class="">different crops</li>
+        </ul>
       </section>
 
       <section>
@@ -199,10 +202,7 @@ tr.unimportant{
       <section>
         <h2>API to manipulate sources</h2>
 		 <section><p>
-         <img src="images/dynamic_capture.png" width="498" height="509"> 
-         <img src="images/dynamic_capture.png">
-         <img src="images/dynamic_capture.png">
-         </p></section>
+         <img src="images/dynamic_capture.png" ></p></section>
         <section><ol>
           <li class="fragment">Canvas</li>
 
@@ -216,6 +216,7 @@ tr.unimportant{
         <h2>Image formats</h2>
 
         <ol>
+          <li class="fragment">JPEG2000</li>
           <li class="fragment">WebP</li>
 
           <li class="fragment">JPEG-XR</li>
@@ -281,6 +282,7 @@ tr.unimportant{
           <blockquote>
             Support art direction<br> (not just resolution switching).
           </blockquote>
+          
         </section>
 
         <section>
@@ -307,7 +309,7 @@ tr.unimportant{
 	  </section>
       <section>
         <h2>The &lt;picture&gt; Element</h2>
-        <pre>
+        <section><pre>
 <code contenteditable="" class=
 "xml">&lt;picture width="500" height="500"&gt;
      &lt;source media="(min-width: 45em)" 
@@ -322,7 +324,21 @@ tr.unimportant{
    
      &lt;p&gt;Accessible text&lt;/p&gt; 
 &lt;/picture&gt;  
-     </code>
+     </code></section>
+     <section>
+  	 <h2>But can also suck :( </h2>
+     <p>Yay! Vendor prefixes!</p> 
+     <pre><code>&lt;picture width="500" height="500"&gt;
+     &lt;source media="
+(-webkit-min-device-pixel-ratio: 1.5), 
+(min--moz-device-pixel-ratio: 1.5), 
+(-o-min-device-pixel-ratio: 3/2), 
+(min-device-pixel-ratio: 1.5), 
+(min-resolution: 1.5dppx)">
+&lt;/picture&gt;
+     </code></pre>
+     </section>
+     
 </pre>
       </section>
 
@@ -384,11 +400,11 @@ tr.unimportant{
           </tr>
       
           <tr>
-            <td>Match MQ &amp; update dynamically</td>
+            <td>Match Breakpoints &amp; update dynamically</td>
 
             <td class="yes">✓</td>
 
-            <td class="no">✗</td>
+            <td class="no">✗ <span style="color: green">✓</span></td>
           </tr>
           
           <tr>
@@ -412,7 +428,7 @@ tr.unimportant{
        
 
           <tr>
-            <td>Breakpoint friendly</td>
+            <td>[CSS] Breakpoint friendly</td>
 
             <td class="yes">✓</td>
 
@@ -431,26 +447,26 @@ tr.unimportant{
         </table>
       </section>
 	  <section>
-      	<h2><span style="color: red" class="love">♥</span>Let's merge them!<span style="color: red" class="love">♥</span></h2>
+      	<h2><span style="color: red" class="love">♥</span>Let's combine them!<span style="color: red" class="love">♥</span></h2>
         <section>
         <img src="images/double_rainbow.jpg">
         </section>
         
         <section>
-          <pre><code contenteditable class="xml">&lt;picture width="500" height="500"&gt;
-   
-   &lt;source media="(min-width: 45em)" 
-       srcset="large-1.jpg 1x, large-2.jpg 2x"&gt;
-   
-   &lt;source media="(min-width: 18em)" 
-       srcset="med-1.jpg 1x, med-2.jpg 2x"&gt;
-   
-   &lt;source srcset="small-1.jpg 1x, small-2.jpg 2x"&gt;
-      	
-   &lt;img src="small-1.jpg" alt=""&gt; 
-      
-   &lt;p&gt;Accessible text&lt;/p&gt;
-   
+          <pre><code contenteditable class="xml">&lt;picture&gt;
+ &lt;source 
+       media=&quot;(min-width: 45em)&quot; 
+       srcset=&quot;large.jpg, large-hd.jpg 2x&quot;&gt;
+    
+ &lt;source 
+       media=&quot;(min-width: 18em)&quot;
+       srcset=&quot;med.jpg, med-hd.jpg 2x&quot;&gt;
+
+ &lt;source 
+        srcset=&quot;small.jpg, small-hd.jpg 2x&quot;&gt;
+  
+  &lt;img src=&quot;small.jpg&quot; alt=&quot;&quot;&gt;
+
 &lt;/picture&gt;</code></pre>
         </section>
       </section>
