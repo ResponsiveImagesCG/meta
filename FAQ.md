@@ -6,9 +6,10 @@ This is necessary as the current user agents (browser) which will be around for 
 It would work for the srcset attribute and is proposed by WHATWG for usage on img element but won't work with multiple sources and different media-queries.
 
 _Example:_
+	
 	<img srcset="low.jpg 1x 200w, high.jpg 2x 400w">
 	<picture>
-		<source srcset="low.jpg 1x 200w, high.jpg 2x 400w" media="(max-width: 480px)">
+		source srcset="low.jpg 1x 200w, high.jpg 2x 400w" media="(max-width: 480px)">
 		<source srcset="monochrome.jpg 1x 200w, monochrome.jpg 2x 400w" media="monochrome">
 	</picture>
 
