@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p><a href="http://www.w3.org/"><img src="http://www.w3.org/Icons/w3c_home" alt="W3C" border="0" height="48" width="72" /></a></p>
+<h1>Responsive Images Panel</h1>
+<h2>31 Oct 2012</h2>
+<hr />
+<div>
+  <p>Art direction use case: crop image differently depending on how much space you have.</p>
+<p>Design breakpoints: You get pixelation or JPEG artifacts at certain points. Designers adapt the design to different breakpoints and adapt the images to that.  </p>
+<p>On printed documents, half-toned pictures look bad, while text is crisp</p>
+  <p>In print, communicating with color is meaningless</p>
+  <p>Monochrome means you can't read a chart with any certainty  </p>
+  <p>More aesthetically pleasing to show different image in portrait and landscape mode</p>
+  <p>media- and feature-specific responses</p>
+  <p>Most people won't notice, but good for TVs: When app is scaled up to a dimension where images don't keep up, they get badly pixelated</p>
+  <p>You want to replace image with higher quality</p>
+  <p>Another use case is APIs</p>
+  <p>Canvas, getUserMedia(), MediaCapture</p>
+  <p>for example, on IOS 6 and Android you can take panoramas out of the box, 22 Mpix imgs</p>
+  <p>want to show specific bits to specific devices</p>
+  <p>Final case: Image formats</p>
+  <p>WebP, JPEG-XR</p>
+  <p>Not universally supported, but represents &gt;20% of market</p>
+  <p>Opera, Chrome</p>
+  <p>With Windows 8, JPEG-XR to many clients, depending on uptake of that os</p>
+  <p>Can't target w/o server-side solution, though</p>
+  <p>Can't test whether browser supports img. format out of the box</p>
+  <p>Also for future eformats. Hard to add new formats to the web</p>
+<p>&lt;video&gt; does provide a solution, but not pretty</p>
+  <p>because codec war happen to be going on, and this solution was a fix</p>
+  <p>could be useful for imgs as well.</p>
+  <p>This is what the CG has looked on in the past year</p>
+  <p>Iterative process to define use cases</p>
+  <p>Initially heavily focused on bandwidth, but we as CG can't address that.</p>
+  <p>Responses from e.g. WHATWG with srcset</p>
+  <p>&lt;picture&gt; works like &lt;video&gt;</p>
+  <p>[btw, Marcos1 said all the above]</p>
+  <p>(code sample for &lt;picture&gt;)</p>
+  <p>legacy-browser fallback &lt;img&gt; within &lt;picture&gt;; accessible text</p>
+  <p>Could throw in ARIA</p>
+  <p>Questions?</p>
+  <p>Comments about use cases?</p>
+  <p>??: …</p>
+  <p>Alt has problems, e.g. with accesibility. Can't add markup structures</p>
+  <p>can't set direction of text</p>
+  <p>without Unicode points</p>
+  <p>can't express role of an image</p>
+  <p>i18n issue is a big one.</p>
+  <p>??: Why would you want additional ontent for an image?</p>
+  <p>hober: image with tabular data would need a table to reprsent it accessibly</p>
+  <p>vhardy: Slides online?</p>
+  <p>Marcos1: will be, will fix them after presenting tomorrow</p>
+  <p>vhardy: One problem with respimg. preloading, will you address this?</p>
+  <p>Marcos1: yes</p>
+  <p>krit: UC is showing different parts of img depending on screen size is solved by MQ and CSS images 3</p>
+  <p>Marcos1: You need &lt;div&gt; tags. We'd like proper markup</p>
+  <p>?? telecom: Reminds me of responsive videos/adaptive streaming</p>
+  <p>Marcos1: Already solved for a while is my impression</p>
+  <p>… solutions are tailored for online/offline, don't need to download 20 differet versions</p>
+  <p>… Also applicable to e-books</p>
+  <p>… videos in e-books</p>
+  <p>??: Maybe things can be ported from videos. Could select image from pbandwidth.</p>
+  <p>Cyril Concolatob: Videos can be much bigger. Can request ranges over time. 1-2 videos per page. With images, many more.</p>
+  <p>&lt;shepazu&gt; ♫R-E-S-P-I-M-G, Find out what it means to me, R-E-S-P-I-M-G, Take care, &lt;img&gt; ♫</p>
+  <p>… re: performance better to send only one request per image</p>
+  <p>… if two reqs per img – main problem is fetching.</p>
+  <p>… If we had format to represent multiple resolutions (jpeg2000), problem is still fetching mechanism</p>
+  <p>… need to fetch img. header with bytemap</p>
+  <p>… then the actual content</p>
+  <p>… May be other solutions, I am working on some things</p>
+  <p>Cyril Concolato: SVG is working on mapping and tiling images.</p>
+  <p>… Changing layouts at the same time?</p>
+  <p>Marcos1: odinho will cover the latter</p>
+  <p>chaals: Adapt to videos as they are downloadinng. imgs are single hit.</p>
+  <p>… if imgs were downloaded in stream, could use video solution</p>
+  <p>&lt;chaals&gt; [but they aren't]</p>
+  <p>Dong Yong?: Another UC is stereoscopic displays</p>
+  <p>odinho: Don't want lots of negotiation with server-side, doesn't scale. Want logic in client.</p>
+  <p>[slides]</p>
+  <p>Two proposals</p>
+  <p>Very different at a fundamental level, but somewhat hard to see it.</p>
+  <p>Many UCs, I'm focusing on having different size pictures and don't want huge pictures under the fold</p>
+  <p>Difference between srcset and picture, is that scset is shorter, declarative and UA may choose algorithm. The latter is important.</p>
+  <p>srcset only gives hints, does not tell the ua what to do.</p>
+  <p>picture is more powerful, has known behavior, not a hint.</p>
+  <p>… If your user is extremely interested in small image sizes due to expensive data, the page author won't send the user what the user wants</p>
+  <p>… Why don't authors like MQs?</p>
+  <p>… Telling ua exactly what to do and how.</p>
+  <p>… uas may want to do more smart stuff in the future. A small browser with specific user group may want to behave in another way than what the author thought about.</p>
+  <p>… 2x–like selection is not enough</p>
+  <p>… (from &lt;picture&gt;)</p>
+  <p>… NOt only about swithing resolutions. On my phone a 2x dpi display</p>
+  <p>… will fetch the big picture, even if small display doesn't benefit from it</p>
+  <p>… print customization is possible with MQs</p>
+  <p>[code sample]</p>
+  <p>&lt;picture&gt; &lt;source media=&quot;min-width…&quot;&gt;</p>
+  <p>… same with srcset</p>
+  <p>… &lt;picture&gt; needs an extra line for media=print</p>
+  <p>… That's a big problem. Both because it prevents innovation</p>
+  <p>… e.g. &quot;browsing&quot; with printer</p>
+  <p>… high dpi won't be visible</p>
+  <p>… If the ua knows which image is biggest, it can just fetch that, ignoring hints</p>
+  <p>Marcos1: I don't understand the ex. If I had a 10x img, how do I tell it to use that for printing?</p>
+  <p>odinho: An even bigger picture</p>
+  <p>?</p>
+  <p>… The 10x img won't be downloaded by desktop and mobile browser</p>
+  <p>… Proposed algorithm won't take anything bigger than it's at</p>
+  <p>marcos: Want something between mega-quality an dlow quality. (Bit of a nitpick)</p>
+  <p>… Maybe not a disconnect, but different approach for design perspective. Designers are used to pixel-level control. Maybe not ideal, but here thye do have to give up control.</p>
+  <p>… &lt;picture&gt; gives absolute control, srcset hints</p>
+  <p>… The risk I see in the future is that srcset gets used, devs notice that when scaling window, this hint is not responded to.</p>
+  <p>… &quot;My image is not showing. I'm going back to javascript&quot;</p>
+  <p>… devs might use what they perceive works</p>
+  <p>odinho: note: we now have a queue</p>
+  <p>… I think if there's an easier solution, then some people reverting to JS is ok</p>
+  <p>… We can't really stop that, not even now</p>
+  <p>… ppl are doing crazy stuff on the web. That's how it is and works. But most pages don't go crazy in every part of th epage</p>
+  <p>… As long as the responsive solution is easier than JS, most people will use the easy way out.</p>
+  <p>… Unless extremely interested, and those ppl will do whatever anyway.</p>
+  <p>hober: These features aren't being used in isolation.</p>
+  <p>… People can do something exotic in 20% case</p>
+  <p>… Also, Many of respimg challenges can be addressed with other platform features: CSS filters and shaders, svg … …</p>
+  <p>… Scope of the problem here is limited to bitmap imgs</p>
+  <p>… We might do authors a disservice by designing something that they use instead of other, omore suitable features</p>
+  <p>&lt;Cyril&gt; I agree with hober</p>
+  <p>krit: You said Authors will prefer &lt;picture&gt; over srcset, is that […] CG</p>
+  <p>Marcos: CG has express preferences and requirements. Not prescriptive of a particular solution.</p>
+  <p>… want to make cool apps and please users</p>
+  <p>krit1: Have prioritiy list?</p>
+  <p>marcos: Look at website</p>
+  <p>… are using RFC keywords</p>
+  <p>vhardy: a step back: CSS spec addresses multi-resolutions</p>
+  <p>… these are semantic images and how to describe them</p>
+  <p>… Have you had feedback from a11y people?</p>
+  <p>… Problem halfway between semantic and presentation</p>
+  <p>Marcos: Not specifically. Sent to HTML group where a11y is well-represented. Feedback from various people. Haven't gotten explicit feedback from more than from those in the CG. We are now seeking more.</p>
+  <p>… srcset bypasses the problem by just extending &lt;img&gt;</p>
+  <p>yoav: Not just a question of semantics and whether img in CSS or HTML</p>
+  <p>… Big difference is that HTML is content, can change day to day/minute to minute. CSs is constant and cacheable</p>
+  <p>… if you start putting content imgs in css, can no longer cache effectively.</p>
+  <p>… re: prefetching: Solution must work with preloader</p>
+  <p>… e.g. WebKit's preload scanner</p>
+  <p>… currently it does</p>
+  <p>[demo]</p>
+  <p>… demo prepared by CG</p>
+  <p>said the above</p>
+  <p>yoav: Set of imgs: mobile img, wide mobile, desktop, hi-res, fallback</p>
+  <p>… Added 2s CSS fetch time to this case</p>
+  <p>… only single wide mobile image is being preloaded before rendering kicks in</p>
+  <p>… problem with current prototype is that fallback img doesn't get preloaded, only when parsed</p>
+  <p>… a WIP</p>
+  <p>… prototype does not react to resizing event, but once resized, the right source should be chosen</p>
+  <p>MArcos: Prototype is at least functional</p>
+  <p>… not ideal, not how we envision, but making inroads</p>
+  <p>… Just To play with idaes</p>
+  <p>&lt;hober&gt; The srcset attribute is currently specified in <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/embedded-content-1.html#the-img-element">http://www.whatwg.org/specs/web-apps/current-work/multipage/embedded-content-1.html#the-img-element</a> and <a href="http://dev.w3.org/html5/srcset/">http://dev.w3.org/html5/srcset/</a> and comments are welcome on whatwg@whatwg.org and public-html-comments@w3.org; please email with your thoughts &amp; suggestions.</p>
+  <p>… Want to look at hwhole problem space to find solutions. Quite helpful to have this discussion here.</p>
+  <p>… Understanding from perspective of community and browser vendors. Hopefully those weilll become one and the same.</p>
+  <p>odinho: 80%/20% concept is important</p>
+  <p>… We also need to look at those UCs. I think quite a lot of our UCs are in the 20% case</p>
+  <p>… Need something really easy and nice for 80%, but 20 % should be there too</p>
+  <p>…maybe later</p>
+  <p>yoav: not sure which are 80 % and which 20% for you, but re: preloading, all current respimg hacks suffer from lack of cacheing, disable prefetching or fetch twice</p>
+  <p>Travis: How does each proposal address art direction UC?</p>
+  <p>… Multiple copies on the server?</p>
+  <p>Marcos: yes</p>
+  <p>hober: Most cases you serve one asset and clip with CSS</p>
+  <p>Marcos: As long as you have srcset you can apply CSS to it.</p>
+  <p>[missed a question]</p>
+  <p>Marcos: ONce you have content, you can clip with CSS</p>
+  <p>??a: Must work without CSS</p>
+  <p>(time's up)</p>
+  <p>chaals: no, you're over the time!</p>
+  <p>&lt;Marcos1&gt; +q</p>
+  <p>&lt;odinho_&gt; Title: Responsive Images</p>
+  <p>&lt;odinho_&gt; Date: Halloween</p>
+  <p>&lt;Marcos1&gt; :)</p>
+  <h3 id="item01">Responsive Images\</h3>
+</div>
+<h2><a name="ActionSummary" id="ActionSummary">Summary of Action Items</a></h2>
+[End of minutes]<br />
+<hr />
+<address>
+Minutes formatted by David Booth's <a href="http://dev.w3.org/cvsweb/~checkout~/2002/scribe/scribedoc.htm">scribe.perl</a> version 1.137 (<a href="http://dev.w3.org/cvsweb/2002/scribe/">CVS log</a>)<br />
+$Date: 2012/10/31 13:54:53 $
+</address>
+<div>
+  <hr />
+  <h2>Scribe.perl diagnostic output</h2>
+  [Delete this section before finalizing the minutes.]<br />
+  <pre>This is scribe.perl Revision: 1.137  of Date: 2012/09/20 20:19:01   Check for newer version at <a href="http://dev.w3.org/cvsweb/~checkout~/2002/scribe/">http://dev.w3.org/cvsweb/~checkout~/2002/scribe/</a>  Guessing input format: RRSAgent_Text_Format (score 1.00)  Succeeded: s/?? telecom/Cyril Concolato/ Succeeded: s/??/Cyril Concolato/ Succeeded: s/??b/yoav/ Found ScribeNick: lstorset Inferring Scribes: lstorset  WARNING: No &quot;Present: ... &quot; found! Possibly Present: Cyril Javi JohnAlbin MArcos Marcos1 Norbert Rossen Ryladog ScribeNick Title Travis a1zu bjkim bradee-oh cabanier chaals hellogeri hober jalvinen joined kawada krit krit1 markw_ odinho odinho_ respimg rotsuya sgodard shepazu tantek tidoust tpacbot vhardy yoav You can indicate people for the Present list like this:         &lt;dbooth&gt; Present: dbooth jonathan mary         &lt;dbooth&gt; Present+ amy   WARNING: No meeting title found! You should specify the meeting title like this: &lt;dbooth&gt; Meeting: Weekly Baking Club Meeting   WARNING: No meeting chair found! You should specify the meeting chair like this: &lt;dbooth&gt; Chair: dbooth  WARNING: Date not understood: Halloween Got date from IRC log name: 31 Oct 2012 Guessing minutes URL: <a href="http://www.w3.org/2012/10/31-respimg-minutes.html">http://www.w3.org/2012/10/31-respimg-minutes.html</a> People with action items:   WARNING: Input appears to use implicit continuation lines. You may need the &quot;-implicitContinuations&quot; option.   </pre>
+  [End of <a href="http://dev.w3.org/cvsweb/~checkout~/2002/scribe/scribedoc.htm">scribe.perl</a> diagnostic output]</div>
+</body>
+</html>
